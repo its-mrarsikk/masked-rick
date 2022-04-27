@@ -6,7 +6,7 @@ const {
 const Client = new Discord.Client({
     intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILD_VOICE_STATES]
 });
-const Token = 'You serious?';
+const Prefix = process.env.PREFIX;
 const DisTube = require('distube');
 const Distube = new DisTube.DisTube(Client);
 Client.on('ready', async () => {
@@ -79,4 +79,4 @@ Client.on('messageCreate', async (message) => {
 });
 
 // Running bot
-Client.login(Token);
+Client.login(process.env.DISCORD_TOKEN);
